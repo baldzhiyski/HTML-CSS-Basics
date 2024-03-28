@@ -37,8 +37,10 @@ function showMovies(movies){
     </div>
     ` ;
     movieEl.addEventListener('click', function() {
+
+        // The id is interpolated into the URL string using template literals. This URL is constructed dynamically, with the id parameter appended as a query parameter.
         const fullMovieInfoURL = `movie-details.html?id=${id}`;
-        // Redirect to the full movie info page
+        // Redirect to the full movie info page and then access the id 
         window.location.href = fullMovieInfoURL;
     });
     main.appendChild(movieEl);
