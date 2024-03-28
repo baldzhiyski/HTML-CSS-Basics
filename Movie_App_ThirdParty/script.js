@@ -18,11 +18,12 @@ async function getMovies(url){
 function showMovies(movies){
     main.innerHTML = '';
     movies.forEach((movie) =>{
-        const {title, poster_path, vote_average, overview} = movie;
+        const {id,title, poster_path, vote_average, overview} = movie;
 
         const movieEl = document.createElement('div');
 
         movieEl.classList.add('movie');
+        movieEl.dataset.movieId = id;
         
         movieEl.innerHTML = `
         <img src="${IMG_PATH + poster_path}" alt="${title}">
@@ -35,6 +36,11 @@ function showMovies(movies){
       ${overview}
     </div>
     ` ;
+    movieEl.addEventListener('click', function() {
+        const fullMovieInfoURL = `movie-details.html?id=${id}`;
+        // Redirect to the full movie info page
+        window.location.href = fullMovieInfoURL;
+    });
     main.appendChild(movieEl);
     });
 }
