@@ -48,7 +48,7 @@ function showMovies(movies){
 }
 
 function getClassByRate(vote) {
-    if(vote >= 8) {
+    if(vote >= 7) {
         return 'gold'
     } else if(vote >= 5) {
         return 'orange'
