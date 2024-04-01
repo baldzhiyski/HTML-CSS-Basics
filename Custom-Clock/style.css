@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color:black;
+    --secondary-color: white;    
+}
+
+html{
+    transition: all 0.5s ease-in;
+}
+
+html.dark{
+    --primary-color: white;
+    --secondary-color: #333;
+}
+
+html.dark{
+    background-color: #111;
+    color: var(--primary-color);
+}
+
+body{
+    font-family: 'Roboto',sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.toggle{
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 12px;
+    position: absolute;
+    top :100px;
+}
+
+.toggle:focus{
+    outline: none;
+}
+
+.clock-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: wheat;
+    border-radius: 50%;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Additional styling for numbers */
+    font-size: 16px;
+    font-weight: bold;
+    margin: 40px;
+}
+
+.number {
+    position: absolute;
+    color: black;
+}
+
+.number.number-12 {
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.number.number-3 {
+    top: 50%;
+    right: -20px;
+    transform: translateY(-50%);
+}
+
+.number.number-6 {
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.number.number-9 {
+    top: 50%;
+    left: -20px;
+    transform: translateY(-50%);
+}
+
+.needle{
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    transform-origin: bottom center;
+    transition: all 0.5s ease-in;
+}
+
+.needle.hour{
+    transform: translate(-50%,-100%) rotate(0deg);
+}
+
+.needle.minute{
+    transform: translate(-50%,-100%) rotate(0deg);
+    height: 100px;
+}
+
+.needle.second{
+    transform: translate(-50%,-100%) rotate(0deg);
+    height: 100px;
+    background-color: #e74c3c;
+}
+
+.center-point {
+    background-color: #e74c3c;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.center-point::after{
+    content: '';
+    background-color: #e74c3c;
+    background-color: var(--primary-color);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+}
+
+.time{
+    font-size: 60px;
+}
+
+.date{
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.date .circle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    height: 18px;
+    width: 18px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    transition: all 0.5s ease-in;
+    font-size: 12px;
+  }
