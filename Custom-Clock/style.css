@@ -76,6 +76,9 @@ body{
     position: absolute;
     color: black;
 }
+html.dark .number{
+    color: white;
+}
 
 .number.number-12 {
     top: -20px;
