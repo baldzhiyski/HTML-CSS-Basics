@@ -29,7 +29,7 @@ function setTime() {
     const minutes = time.getMinutes();
     const seconds = time.getSeconds();
 
-    hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 12, 0, 360)}deg)`;
+    hourEl.style.transform = `translate(-50%, -100%) rotate(${scale(hoursForClock, 0, 24, 0, 360)}deg)`;
     minuteEl.style.transform = `translate(-50%, -100%) rotate(${scale(minutes, 0, 60, 0, 360)}deg)`;
     secondEl.style.transform = `translate(-50%, -100%) rotate(${scale(seconds, 0, 60, 0, 360)}deg)`;
 

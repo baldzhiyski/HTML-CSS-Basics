@@ -25,6 +25,10 @@ body{
     width: 0;
     height: 0;
     border: 50px solid transparent;
+    /* This line sets the color of the bottom border of 
+    the square to white. Since the other borders are transparent, 
+    only the bottom border is visible, 
+    giving the appearance of a triangle pointing upwards*/
     border-bottom-color: white;
     animation: rotateA 2s linear infinite 0.5s;
 }
